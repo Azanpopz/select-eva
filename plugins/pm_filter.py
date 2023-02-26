@@ -33,7 +33,7 @@ BATCH_FILES = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & filters.incoming)  # & ~filters.edited
+@Client.on_message(filters.group & filters.private & filters.text & filters.incoming)  # & ~filters.edited
 async def give_filter(client, message):
     group_id = message.chat.id
     chat_type = message.sender_chat.type if message.sender_chat else message.chat.type
